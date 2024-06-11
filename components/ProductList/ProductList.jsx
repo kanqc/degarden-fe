@@ -10,12 +10,17 @@ const getAllProduct = async () => {
   );
   return productRes?.data;
 };
-async function ProductList(props) {
+async function ProductList() {
   const datas = await getAllProduct();
-
   return (
-    <div>
-      <ProductCard products={datas} />
+    <div className="mx-[60px]">
+      <div className="-ml-[20px]">
+        <div className="flex flex-row flex-wrap">
+          {datas.map((data) => {
+            return <ProductCard product={data} />;
+          })}
+        </div>
+      </div>
     </div>
   );
 }

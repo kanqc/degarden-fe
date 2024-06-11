@@ -54,7 +54,7 @@ function Navbar(props) {
     <div>
       {/* Window navbar */}
       <div
-        className={`${monsterat.className} z-50 w-full bg-white text-[15px] font-light transition-all duration-300 sm:fixed lg:px-44 ${fixedNav ? `sm:h-24 lg:fixed lg:h-28 lg:animate-appear-from-top` : "sm:h-28 lg:h-36"}`}
+        className={`${monsterat.className} z-50 w-full bg-white text-[15px] font-light transition-all duration-300 sm:fixed lg:static lg:px-44 ${fixedNav ? `sm:h-24 lg:fixed lg:h-28 lg:animate-appear-from-top` : "sm:h-28 lg:h-36"}`}
       >
         <div className=" flex w-full gap-10 sm:justify-around">
           <div className="w-44 flex-none self-center sm:hidden lg:block">
@@ -159,12 +159,6 @@ function Navbar(props) {
           <div className="mb-5 py-1 pl-2">Search</div>
         </div>
       </div>
-      <div className="h-96 bg-red-50"></div>
-      <div className="h-96 bg-red-50"></div>{" "}
-      <div className="h-96 bg-red-50"></div>{" "}
-      <div className="h-96 bg-red-50"></div>{" "}
-      <div className="h-96 bg-red-50"></div>{" "}
-      <div className="h-96 bg-red-50"></div>
     </div>
   );
 }
