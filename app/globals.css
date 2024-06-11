@@ -2,26 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  html {
+    @apply scroll-smooth box-border outline-none list-none overflow-x-hidden;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  ::-webkit-scrollbar {
+    @apply w-[8px];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent border-[1px] border-[#7e7e7e] rounded-[8px];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#e8677b] border-[2px] border-[#616161] rounded-[8px];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  #hamberger {
+    zoom: 0.8;
+  }
+
+  #hamberger span {
+    @apply block bg-subTitle absolute cursor-pointer h-[4px] w-full opacity-100 rotate-0 transition-all duration-300 ease-in-out rounded-[9px] left-0;
+
+  }
+
+  #hamberger span:nth-child(1) {
+    @apply top-0;
+  }
+
+  #hamberger span:nth-child(2),
+  #hamberger span:nth-child(3) {
+    @apply top-[9px]
+  }
+
+
+  #hamberger span:nth-child(4) {
+    @apply top-[18px];
+  }
+
+  #hamberger.open span:nth-child(2) {
+    @apply rotate-45;
+
+  }
+
+  #hamberger.open span:nth-child(1) {
+    @apply opacity-0
+  }
+
+  #hamberger.open span:nth-child(4) {
+    @apply opacity-0
+  }
+
+  #hamberger.open span:nth-child(3) {
+    @apply -rotate-45;
+
+  }
 }
+
+body {}
